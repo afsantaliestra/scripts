@@ -1,0 +1,32 @@
+version: "3.3"
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql
+    restart: unless-stopped
+    environment:
+      #MYSQL_USER: ${MYSQL_USER}
+      MYSQL_USER: mysql
+      #MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_PASSWORD: mysql
+      #MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: default_schema
+    volumes:
+      - /var/stack/mysql:/var/lib/mysql
+    ports:
+      - 3306:3306
+  
+  pma:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    restart: unless-stopped
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    ports:
+      - 8072:80

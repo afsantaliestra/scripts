@@ -1,0 +1,29 @@
+alias cls='clear'
+
+# DOCKER
+alias dckclsv='docker volume prune -f'
+alias dckcls='dckclsc; echo ""; dckclsi; echo ""; dckclsv'
+alias dckclsp='docker rm -f $(docker ps -aq); echo ""; docker rmi -f $(docker images -q); echo ""; dckclsv' 
+
+alias dcks='docker ps; echo ""; docker images; echo ""; docker volume ls'
+alias dcksc='docker ps'
+alias dcksi='docker images'
+alias dcksv='docker volume ls'
+
+alias dckr='docker restart'
+alias dckl='docker logs -f --tail=50'
+alias dck='docker'
+
+# DOCKER-COMPOSE
+alias dc='docker-compose'
+
+# GIT
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gpod='git push origin develop'
+alias gcd='git checkout develop'
+alias gcm='git checkout master'
+
+# SSH CONNECTIONS
+#alias <alias>='ssh <user>@<IP or domain>'

@@ -1,0 +1,17 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    container_name: redis
+    restart: unless-stopped
+    ports:
+    - 6379:6379
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: redis-commander
+    restart: unless-stopped
+    environment:
+      REDIS_HOSTS: local:redis:6379
+    ports:
+    - 8073:8081

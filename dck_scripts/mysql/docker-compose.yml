@@ -1,4 +1,4 @@
-version: "3.3"
+version: '3.8'
 
 services:
   mysql:
@@ -19,7 +19,7 @@ services:
       - 3306:3306
   
   pma:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin/phpmyadmin:5
     container_name: pma
     restart: unless-stopped
     links:

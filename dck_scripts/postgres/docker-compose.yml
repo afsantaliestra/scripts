@@ -1,4 +1,4 @@
-version: "3.3"
+version: '3.8'
 
 services:
   postgres:
@@ -20,7 +20,7 @@ services:
 
   pga:
     container_name: pga
-    image: dpage/pgadmin4
+    image: dpage/pgadmin4:4
     environment:
       #PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
       PGADMIN_DEFAULT_EMAIL: postgres@postgre.sql

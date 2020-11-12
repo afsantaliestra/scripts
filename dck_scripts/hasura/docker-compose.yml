@@ -1,4 +1,4 @@
-version: '3.6'
+version: '3.8'
 services:
   postgres:
     image: postgres:12
@@ -17,7 +17,7 @@ services:
         - 5432:5432
 
   graphql-engine:
-    image: hasura/graphql-engine:v1.1.1
+    image: hasura/graphql-engine:v1.3.2
     container_name: hasura
     restart: unless-stopped
     environment:

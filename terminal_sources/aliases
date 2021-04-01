@@ -3,7 +3,7 @@ alias cls='clear'
 # DOCKER
 alias dckclsv='docker volume prune -f'
 alias dckclsn='dck network rm $(dck network ls -q)'
-alias dckcls='dckclsc; echo ""; dckclsi; echo ""; dckclsv'
+alias dckcls='dckclsc; echo ""; dckclsi; echo ""; dckclsv; echo ""; dckclsn'
 alias dckclsp='docker rm -f $(docker ps -aq); echo ""; docker rmi -f $(docker images -q); echo ""; dckclsv; echo ""; dckclsn' 
 
 alias dcks='docker ps; echo ""; docker images; echo ""; docker volume ls; echo ""; docker network ls'

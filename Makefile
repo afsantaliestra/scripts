@@ -1,4 +1,5 @@
 .DEFAULT_GOAL := zsh
+SHELL := /bin/zsh
 
 bash:
 	@echo "Appending aliases and functions to .bashrc file."
@@ -9,6 +10,10 @@ zsh:
 	@echo "Appending aliases and functions to .zshrc file."
 	@echo "source ~/scripts/terminal_sources/aliases" >> ~/.zshrc
 	@echo "source ~/scripts/terminal_sources/functions" >> ~/.zshrc
+
+reload:
+	@echo "Reload .zshrc file"
+	@source ~/.zshrc
 
 databases: postgres mongo mysql redis hasura rabbitmq
 
@@ -21,11 +26,6 @@ mongo:
 	@echo "Running MongoDB with MongoExpress."
 	@cd ./dck_scripts/mongo; docker-compose up -d
 	@echo "MongoDB on port 27017 - MongoExpress on port 8071"
-
-mysql:
-	@echo "Running MySQL with PHPMyAdmin."
-	@cd ./dck_scripts/mysql; docker-compose up -d
-	@echo "MySQL on port 3306 - PHPMyAdmin on port 8072"
 
 mysql:
 	@echo "Running MySQL with PHPMyAdmin."
